@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
 public class Cell {
-    private int row, col;
+    private int row, col, val;
     private ArrayList<Integer> options;
-    public Cell(int row, int col){
+    public Cell(int row, int col, int val){
         this.row = row;
         this.col = col;
+        this.val = val;
     }
 
     private void fill(){
