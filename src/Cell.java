@@ -14,10 +14,10 @@ public class Cell {    //takes in val 0
             options.add(i);
         }
     }
-    public void remove(int rem){
+    public void remove(int rem){//removing int rem from options
         for (int i = 0; i < options.size(); i++) {
-
-
+            if (rem == options.get(i))
+                options.remove(i);
         }
     }
 
