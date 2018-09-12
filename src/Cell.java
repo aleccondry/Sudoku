@@ -9,7 +9,7 @@ public class Cell {
         this.val = val;
     }
 
-    private void fill(){
+    public void fill(){
         for (int i = 1; i < 10; i++) {
             options.add(i);
         }

@@ -9,20 +9,19 @@ public class Reader {
     public int[][] LoadPuzzle(String file){
         String output;
         int[][] arr = new int[9][9];
-        int counter = 0;
         try{
             BufferedReader br = new BufferedReader(new FileReader("./src/Puzzles/" + file));
             try{
-                while(br.readLine() != null){
-                    output = br.readLine();
+                output = br.readLine();
+                while(output != null){
                     String[] val = output.split(" ");
                     for (int i = 0; i < val.length; i++) {
-                        System.out.println(val[i]);
+                        arr[i][0] = Integer.parseInt(val[i]);
+                        System.out.print(arr[i][0] + " ");
                     }
-                    for (int i = 0; i < val.length; i++) {
-                        arr[i][counter] = Integer.parseInt(val[i]);
-                    }
-                    counter++;
+                    System.out.println(" ");
+                    output = br.readLine();
+
                 }
             }catch(IOException e){
                 e.printStackTrace();
