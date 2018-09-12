@@ -17,6 +17,9 @@ public class Reader {
                     output = br.readLine();
                     String[] val = output.split(" ");
                     for (int i = 0; i < val.length; i++) {
+                        System.out.println(val[i]);
+                    }
+                    for (int i = 0; i < val.length; i++) {
                         arr[i][counter] = Integer.parseInt(val[i]);
                     }
                     counter++;
