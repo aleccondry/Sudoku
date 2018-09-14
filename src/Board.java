@@ -35,13 +35,14 @@ public class Board {
                                 cells[i][j].printOptions();
                         }
                     }
+                    if(cells[i][k].getVal() != 0) {
+                        if (cells[i][j].getOptions().contains(cells[i][k].getVal())) {
+                            cells[i][j].remove(cells[i][k].getVal());
+                        }
+                    }
                 }
             }
-
         }
-
-
     }
-
 }
 
