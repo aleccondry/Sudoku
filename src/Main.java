@@ -3,6 +3,7 @@ public class Main {
         Reader r = new Reader();
         Board bd = new Board(r.LoadPuzzle("s01a.txt"));
         bd.filler();
+        bd.alg1();
 
     }
 }

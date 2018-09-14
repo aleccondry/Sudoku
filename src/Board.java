@@ -34,7 +34,19 @@ public class Board {
     public void alg1(){
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {  //access all cells
-                System.out.println(cells[i][j]);
+
+                for (int k = 0; k < cells.length; k++) { //run through rows
+                    if(cells[k][j].getVal() != 0) {
+                            if (cells[i][j].getOptions().contains(cells[k][j].getVal())){
+                                cells[i][j].remove(cells[k][j].getVal());
+                        }
+
+
+                    }
+
+
+                }
+
 
 
             }
