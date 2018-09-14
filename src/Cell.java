@@ -21,5 +21,19 @@ public class Cell {    //takes in val 0
         }
     }
 
+    public int getRow() {
+        return row;
+    }
 
+    public int getCol() {
+        return col;
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public ArrayList<Integer> getOptions() {
+        return options;
+    }
 }

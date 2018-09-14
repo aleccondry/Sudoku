@@ -16,8 +16,10 @@ public class Reader {
                 while(output != null){
                     String[] val = output.split(" ");
                     for (int i = 0; i < val.length; i++) {
-                        arr[i][0] = Integer.parseInt(val[i]);
-                        System.out.print(arr[i][0] + " ");
+                        if (!val[i].equals("")) {
+                            arr[i][0] = Integer.parseInt(val[i]);
+                            System.out.print(arr[i][0] + " ");
+                        }
                     }
                     System.out.println(" ");
                     output = br.readLine();
