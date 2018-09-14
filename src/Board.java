@@ -8,6 +8,7 @@ public class Board {
                 cells[i][j] = new Cell(i, j, numgrid[i][j]);
             }
         }
+
     }
 
     public void filler(){
@@ -22,4 +23,26 @@ public class Board {
     }
 
 
+
+
+
+
+
+
+
+
+    public void alg1(){
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {  //access all cells
+                System.out.println(cells[i][j]);
+
+
+            }
+
+        }
+
+
+    }
+
 }
+
