@@ -4,6 +4,7 @@ public class Cell {    //takes in val 0
     private int row, col, val;
     private ArrayList<Integer> options;
     public Cell(int row, int col, int val){
+        options = new ArrayList<Integer>();
         this.row = row;
         this.col = col;
         this.val = val;
@@ -35,5 +36,11 @@ public class Cell {    //takes in val 0
 
     public ArrayList<Integer> getOptions() {
         return options;
+    }
+
+    public void printOptions(){
+        for (int i = 0; i < options.size(); i++) {
+            System.out.println(options);
+        }
     }
 }
