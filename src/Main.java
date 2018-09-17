@@ -8,6 +8,7 @@ public class Main {
             bd.alg1();
         }
         System.out.println("solved");
+        bd.printArr();
 
     }
 }

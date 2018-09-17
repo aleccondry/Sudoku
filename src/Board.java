@@ -36,14 +36,6 @@ public class Board {
 
     public void alg1(){
         for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells[0].length; j++) {
-                if (cells[i][j].getVal() != 0) {
-                    cells[i][j].printOptions();
-                    System.out.println("Value: " + cells[i][j].getVal() + " Column:" + cells[i][j].getCol() + " Row:" + cells[i][j].getRow());
-                }
-            }
-        }
-        for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {  //access all cells
 
                 for (int k = 0; k < cells.length; k++) { //run through rows
@@ -169,6 +161,25 @@ public class Board {
 
 
             }
+        }
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {
+                cells[i][j].enter();
+            }
+        }
+//        for (int i = 0; i < cells.length; i++) {
+//            for (int j = 0; j < cells[0].length; j++) {
+//                cells[i][j].printOptions();
+//            }
+//        }
+    }
+
+    public void printArr(){
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {
+                System.out.print(cells[i][j].getVal() + " ");
+            }
+            System.out.println();
         }
     }
 }

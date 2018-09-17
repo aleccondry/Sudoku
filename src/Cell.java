@@ -24,6 +24,12 @@ public class Cell {    //takes in val 0
 
     }
 
+    public void enter(){
+        if (options.size() == 1){
+            val = options.get(0);
+        }
+    }
+
     public int getRow() {
         return row;
     }
