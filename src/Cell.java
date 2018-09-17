@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Cell {    //takes in val 0
     private int row, col, val;
     private ArrayList<Integer> options;
+
     public Cell(int row, int col, int val){
         options = new ArrayList<Integer>();
         this.row = row;
@@ -20,6 +21,7 @@ public class Cell {    //takes in val 0
             if (rem == options.get(i))
                 options.remove(i);
         }
+
     }
 
     public int getRow() {

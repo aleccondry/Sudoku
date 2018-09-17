@@ -4,7 +4,10 @@ public class Main {
         int[][] arr = r.LoadPuzzle("s01a.txt");
         Board bd = new Board(arr);
         bd.filler();
-        bd.alg1();
+        while (!bd.isSolved()) {
+            bd.alg1();
+        }
+        System.out.println("solved");
 
     }
 }

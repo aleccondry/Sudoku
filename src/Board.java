@@ -10,7 +10,17 @@ public class Board {
                 cells[i][j] = new Cell(i, j, numgrid[i][j]);
             }
         }
+    }
 
+    public boolean isSolved(){
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {
+                if (cells[i][j].getVal() == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void filler(){
