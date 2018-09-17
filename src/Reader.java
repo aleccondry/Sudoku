@@ -9,6 +9,7 @@ public class Reader {
     public int[][] LoadPuzzle(String file){
         String output;
         int[][] arr = new int[9][9];
+        int counter = 0;
         try{
             BufferedReader br = new BufferedReader(new FileReader("./src/Puzzles/" + file));
             try{
@@ -17,13 +18,13 @@ public class Reader {
                     String[] val = output.split(" ");
                     for (int i = 0; i < val.length; i++) {
                         if (!val[i].equals("")) {
-                            arr[i][0] = Integer.parseInt(val[i]);
-                            System.out.print(arr[i][0] + " ");
+                            arr[counter][i] = Integer.parseInt(val[i]);
+                            System.out.print(arr[counter][i] + " ");
                         }
                     }
                     System.out.println(" ");
                     output = br.readLine();
-
+                    counter++;
                 }
             }catch(IOException e){
                 e.printStackTrace();

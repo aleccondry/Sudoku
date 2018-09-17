@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         Reader r = new Reader();
-        Board bd = new Board(r.LoadPuzzle("s01a.txt"));
+        int[][] arr = r.LoadPuzzle("s01a.txt");
+        Board bd = new Board(arr);
         bd.filler();
         bd.alg1();
 

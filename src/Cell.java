@@ -39,8 +39,6 @@ public class Cell {    //takes in val 0
     }
 
     public void printOptions(){
-        for (int i = 0; i < options.size(); i++) {
             System.out.println(options);
-        }
     }
 }
