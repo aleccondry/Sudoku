@@ -48,6 +48,116 @@ public class Board {
                         }
                     }
                 }
+                if((i+1)%3==0) {//i=2,5,8
+                    if((j+1)%3==0) {//j=2,5,8
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-2][j].getVal());
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i-1][j-1].getVal());
+                        cells[i][j].remove(cells[i-2][j-1].getVal());
+                        cells[i][j].remove(cells[i][j-2].getVal());
+                        cells[i][j].remove(cells[i-1][j-2].getVal());
+                        cells[i][j].remove(cells[i-2][j-2].getVal());
+
+                    }
+                    else if((j+1)%3==1) {//j=0,3,6
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i][j+2].getVal());
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-1][j+1].getVal());
+                        cells[i][j].remove(cells[i-1][j+2].getVal());
+                        cells[i][j].remove(cells[i-2][j].getVal());
+                        cells[i][j].remove(cells[i-2][j+1].getVal());
+                        cells[i][j].remove(cells[i-2][j+2].getVal());
+
+                    }
+                    else if((j+1)%3==2) {//j=1, 4, 7
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-1][j-1].getVal());
+                        cells[i][j].remove(cells[i-1][j+1].getVal());
+                        cells[i][j].remove(cells[i-2][j].getVal());
+                        cells[i][j].remove(cells[i-2][j-1].getVal());
+                        cells[i][j].remove(cells[i-2][j+1].getVal());
+
+                    }
+
+                }
+                else if((i+1)%3==1) {//i=0,3,6
+                    if((j+1)%3==0) {//j=2,5,8
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i][j-2].getVal());
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+1][j-1].getVal());
+                        cells[i][j].remove(cells[i+1][j-2].getVal());
+                        cells[i][j].remove(cells[i+2][j].getVal());
+                        cells[i][j].remove(cells[i+2][j-1].getVal());
+                        cells[i][j].remove(cells[i+2][j-2].getVal());
+
+                    }
+                    else if((j+1)%3==1) {//j=0,3,6
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+2][j].getVal());
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i+1][j+1].getVal());
+                        cells[i][j].remove(cells[i+2][j+1].getVal());
+                        cells[i][j].remove(cells[i][j+2].getVal());
+                        cells[i][j].remove(cells[i+1][j+2].getVal());
+                        cells[i][j].remove(cells[i+2][j+2].getVal());
+
+                    }
+                    else if((j+1)%3==2) {//j=1, 4, 7
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+1][j-1].getVal());
+                        cells[i][j].remove(cells[i+1][j+1].getVal());
+                        cells[i][j].remove(cells[i+2][j].getVal());
+                        cells[i][j].remove(cells[i+2][j-1].getVal());
+                        cells[i][j].remove(cells[i+2][j+1].getVal());
+
+                    }
+
+                }
+                else if((i+1)%3==2) {//i=1, 4, 7
+                    if((j+1)%3==0) {//j=2,5,8
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i][j-2].getVal());
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-1][j-1].getVal());
+                        cells[i][j].remove(cells[i-1][j-2].getVal());
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+1][j-1].getVal());
+                        cells[i][j].remove(cells[i+1][j-2].getVal());
+
+                    }
+                    else if((j+1)%3==1) {//j=0,3,6
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i][j+2].getVal());
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-1][j+1].getVal());
+                        cells[i][j].remove(cells[i-1][j+2].getVal());
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+1][j+1].getVal());
+                        cells[i][j].remove(cells[i+1][j+2].getVal());
+
+
+                    }
+                    else if((j+1)%3==2) {//j=1, 4, 7
+                        cells[i][j].remove(cells[i][j-1].getVal());
+                        cells[i][j].remove(cells[i][j+1].getVal());
+                        cells[i][j].remove(cells[i-1][j].getVal());
+                        cells[i][j].remove(cells[i-1][j-1].getVal());
+                        cells[i][j].remove(cells[i-1][j+1].getVal());
+                        cells[i][j].remove(cells[i+1][j].getVal());
+                        cells[i][j].remove(cells[i+1][j-1].getVal());
+                        cells[i][j].remove(cells[i+1][j+1].getVal());
+
+                    }
+                }
+
+
             }
         }
     }
