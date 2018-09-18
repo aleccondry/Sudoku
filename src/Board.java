@@ -1,14 +1,43 @@
+import java.util.ArrayList;
+
 public class Board {
 
     private Cell[][] cells;
+    private Set[] rows, cols, boxes;
 
     public Board(int[][] numgrid){
 
+        ArrayList<Cell>[] boxSets = new ArrayList[9];
         cells = new Cell[9][9];
+        rows = new Set[9];
+        cols = new Set[9];
+        boxes = new Set[9];
+
+        for (int i = 0; i < 9; i++) {
+            boxSets[i] = new ArrayList<Cell>();
+        }
+
         for (int i = 0; i < numgrid.length; i++) {
             for (int j = 0; j < numgrid[0].length; j++) {
-                cells[i][j] = new Cell(i, j, numgrid[i][j]);
+                Cell cell = new Cell(i, j, numgrid[i][j]);
+                cells[i][j] = cell;
+                int boxIdx = i/3*3 + j/3;
+                boxSets[boxIdx].add(cell);
             }
+        }
+
+        for (int i = 0; i < 9; i++) { //fills sets with arrays of cells
+            Cell[] box = new Cell[9];
+            for (int j = 0; j < 9; j++) {
+                box[j] = boxSets[i].get(j);
+            }
+            boxes[i] = new Set(box);
+            rows[i] = new Set(cells[i]);
+            Cell[] list = new Cell[9];
+            for (int j = 0; j < 9; j++) {
+                list[i] = cells[j][i];
+            }
+            cols[i] = new Set(list);
         }
     }
 
@@ -35,6 +64,19 @@ public class Board {
     }
 
     public void alg1(){
+//        for (int i = 0; i < boxes.length; i++) {
+//            Cell[] arr = boxes[i].getCells();
+//            for (int j = 0; j < arr.length; j++) {
+//                for (int k = 0; k < arr.length; k++) {
+//                    if (arr[j].getVal() != 0){
+//                        if (arr[j].getOptions().contains(arr[k].getVal())){
+//                            arr[j].remove(arr[k].getVal());
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {  //access all cells
 
