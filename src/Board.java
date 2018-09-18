@@ -12,7 +12,7 @@ public class Board {
         }
     }
 
-    public boolean isSolved(){
+    public boolean isSolved(){ //Returns true if game is won
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
                 if (cells[i][j].getVal() == 0){
@@ -23,7 +23,7 @@ public class Board {
         return true;
     }
 
-    public void filler(){
+    public void filler(){ //Fills options list
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
                 if (cells[i][j].getVal() == 0){
@@ -172,6 +172,14 @@ public class Board {
 //                cells[i][j].printOptions();
 //            }
 //        }
+    }
+
+    public void alg2(){
+
+    }
+
+    public void isValid(){
+
     }
 
     public void printArr(){
