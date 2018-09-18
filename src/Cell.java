@@ -49,4 +49,5 @@ public class Cell {    //takes in val 0
     public void printOptions(){
             System.out.println(options);
     }
+
 }

@@ -4,6 +4,7 @@ public class Board {
 
     private Cell[][] cells;
     private Set[] rows, cols, boxes;
+    private ArrayList<Integer> options2;
 
     public Board(int[][] numgrid){
 
