@@ -218,14 +218,34 @@ public class Board {
     }
 
     public void alg2(){
-
+        System.out.println(isValid());
     }
 
-    public void isValid(){
-
+    public boolean isValid() {
+        int[] arr1 = new int[9];
+        int[] arr2 = new int[9];
+        int[] arr3 = new int[9];
+        for (int i = 0; i < rows.length; i++) {
+            arr1 = rows[i].getValsofCells();
+            arr2 = cols[i].getValsofCells();
+            arr3 = boxes[i].getValsofCells();
+            for (int j = 0; j < arr1.length; j++) {
+                for (int k = 0; k < arr1.length; k++) {
+                    if (arr1[j] == arr1[k]) {
+                        return false;
+                    }
+                    if (arr2[j] == arr1[k]) {
+                        return false;
+                    }
+                    if (arr3[j] == arr1[k]) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
-
-    public void printArr(){
+    public void printArr() {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
                 System.out.print(cells[i][j].getVal() + " ");

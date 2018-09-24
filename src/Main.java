@@ -6,7 +6,8 @@ public class Main {
         bd.filler();
         while (!bd.isSolved()) {
             bd.alg1();
-            bd.printArr();
+            bd.alg2();
+//            bd.printArr();
             System.out.println();
         }
         System.out.println("solved");
