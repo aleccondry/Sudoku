@@ -12,8 +12,9 @@ public class Set {
 
     public int[] getValsofCells(){
         int[] arr = new int[9];
-        for (int i = 0; i < cells.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = cells[i].getVal();
+
         }
         return arr;
     }

@@ -36,7 +36,7 @@ public class Board {
             rows[i] = new Set(cells[i]);
             Cell[] list = new Cell[9];
             for (int j = 0; j < 9; j++) {
-                list[i] = cells[j][i];
+                list[j] = cells[j][i];
             }
             cols[i] = new Set(list);
         }
@@ -222,23 +222,22 @@ public class Board {
     }
 
     public boolean isValid() {
-        int[] arr1 = new int[9];
-        int[] arr2 = new int[9];
-        int[] arr3 = new int[9];
         for (int i = 0; i < rows.length; i++) {
-            arr1 = rows[i].getValsofCells();
-            arr2 = cols[i].getValsofCells();
-            arr3 = boxes[i].getValsofCells();
+            Cell[] arr1 = rows[i].getCells();
+            Cell[] arr2 = cols[i].getCells();
+            Cell[] arr3 = boxes[i].getCells();
             for (int j = 0; j < arr1.length; j++) {
                 for (int k = 0; k < arr1.length; k++) {
-                    if (arr1[j] == arr1[k]) {
-                        return false;
-                    }
-                    if (arr2[j] == arr1[k]) {
-                        return false;
-                    }
-                    if (arr3[j] == arr1[k]) {
-                        return false;
+                    if (k != j) {
+                        if (arr1[j].getVal() == arr1[k].getVal() && arr1[j].getVal() != 0) {
+                            return false;
+                        }
+                        if (arr2[j].getVal() == arr2[k].getVal() && arr2[j].getVal() != 0) {
+                            return false;
+                        }
+                        if (arr3[j].getVal() == arr3[k].getVal() && arr3[j].getVal() != 0) {
+                            return false;
+                        }
                     }
                 }
             }
