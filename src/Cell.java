@@ -24,6 +24,12 @@ public class Cell {    //takes in val 0
 
     }
 
+    public void empty(){
+        for (int i = 0; i < options.size(); i++) {
+            options.remove(i);
+        }
+    }
+
     public void enter(){
         if (options.size() == 1){
             val = options.get(0);
@@ -50,4 +56,7 @@ public class Cell {    //takes in val 0
             System.out.println(options);
     }
 
+    public void setVal(int val) {
+        this.val = val;
+    }
 }

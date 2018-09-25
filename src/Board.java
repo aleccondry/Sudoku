@@ -65,18 +65,6 @@ public class Board {
     }
 
     public void alg1(){
-//        for (int i = 0; i < boxes.length; i++) {
-//            Cell[] arr = boxes[i].getCells();
-//            for (int j = 0; j < arr.length; j++) {
-//                for (int k = 0; k < arr.length; k++) {
-//                    if (arr[j].getVal() != 0){
-//                        if (arr[j].getOptions().contains(arr[k].getVal())){
-//                            arr[j].remove(arr[k].getVal());
-//                        }
-//                    }
-//                }
-//            }
-//        }
 
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {  //access all cells
@@ -217,8 +205,34 @@ public class Board {
 //        }
     }
 
-    public void alg2(){
-        System.out.println(isValid());
+    public Cell getNextCell(){
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {
+                if (cells[i][j].getVal() == 0){
+                    return cells[i][j];
+                }
+            }
+        }
+        return null;
+    }
+
+    public void alg2(Cell c){ //backtracing bruteforce
+        printArr();
+        System.out.println();
+        if (c.getOptions().size() != 0){
+            for (int i = 0; i < c.getOptions().size(); i++) {
+                c.setVal(c.getOptions().get(i));
+                if (isValid() && !isSolved()){
+                    alg2(getNextCell());
+                }
+                if (isSolved() && isValid()){
+                    break;
+                }
+            }
+        }
+        if (!isSolved()){
+            c.setVal(0);
+        }
     }
 
     public boolean isValid() {
@@ -244,6 +258,7 @@ public class Board {
         }
         return true;
     }
+
     public void printArr() {
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[0].length; j++) {
@@ -252,5 +267,6 @@ public class Board {
             System.out.println();
         }
     }
+
 }
 
