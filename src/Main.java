@@ -7,8 +7,8 @@ public class Main {
         while (!bd.isSolved()) {
             bd.alg1();
             bd.alg2(bd.getNextCell());
-            bd.printArr();
-            System.out.println();
+//            bd.printArr();
+//            System.out.println();
         }
         System.out.println("solved");
         bd.printArr();

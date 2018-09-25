@@ -24,24 +24,10 @@ public class Cell {    //takes in val 0
 
     }
 
-    public void empty(){
-        for (int i = 0; i < options.size(); i++) {
-            options.remove(i);
-        }
-    }
-
     public void enter(){
         if (options.size() == 1){
             val = options.get(0);
         }
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public int getCol() {
-        return col;
     }
 
     public int getVal() {
@@ -50,10 +36,6 @@ public class Cell {    //takes in val 0
 
     public ArrayList<Integer> getOptions() {
         return options;
-    }
-
-    public void printOptions(){
-            System.out.println(options);
     }
 
     public void setVal(int val) {

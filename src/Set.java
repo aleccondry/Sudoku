@@ -10,12 +10,4 @@ public class Set {
         return cells;
     }
 
-    public int[] getValsofCells(){
-        int[] arr = new int[9];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = cells[i].getVal();
-
-        }
-        return arr;
-    }
 }

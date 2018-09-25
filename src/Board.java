@@ -4,7 +4,7 @@ public class Board {
 
     private Cell[][] cells;
     private Set[] rows, cols, boxes;
-    private ArrayList<Integer> options2;
+    private int permutations = 0;
 
     public Board(int[][] numgrid){
 
@@ -217,8 +217,9 @@ public class Board {
     }
 
     public void alg2(Cell c){ //backtracing bruteforce
-        printArr();
-        System.out.println();
+//        printArr();
+//        System.out.println();
+        permutations++;
         if (c.getOptions().size() != 0){
             for (int i = 0; i < c.getOptions().size(); i++) {
                 c.setVal(c.getOptions().get(i));
@@ -265,7 +266,9 @@ public class Board {
                 System.out.print(cells[i][j].getVal() + " ");
             }
             System.out.println();
+
         }
+        System.out.println("permuations: " + permutations);
     }
 
 }
